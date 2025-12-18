@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Add your own achievement to <%=nameData.appName%></title>
+    <link rel="stylesheet"  type="text/css" href="/main.css" />
+  </head>
+  <body>
+    <h1><%=nameData.appName%>: Add Achievements!</h1>
+    <form action="achievement_added" method="POST">
+      Distance Ran (in metres): <input id="dist_box" type="text" name="dist"><br><br>
+      Time Taken (hh:mm:ss): <input id="time_box" type="text" name="time">
+      <br><br><input type="submit" value="Add Achievement" >
+      <br><br><p><a href="/">Go to Home</a></p>
+    </form>
+  </body>
+</html>

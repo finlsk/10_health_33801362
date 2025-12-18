@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Search <%=nameData.appName%> achievements</title>
+    <link rel="stylesheet"  type="text/css" href="/main.css" />
+  </head>
+  <body>
+    <h1>Search <%=nameData.appName%> achievements</h1>
+    <form action="search_result" method="GET" id="search">
+      <p>Scroll to find your place in the <%=nameData.appName%> achievements or search your username here!</p>
+      <input id="search-box" type="text" name="search_text">
+      <input type="submit" value="Search">
+    </form>
+    <ul>
+      <% availableAchievements.forEach(function(achievement) { %>
+        <li><strong><%= achievement.username %></strong>: Distance Run: <%= achievement.distrun %>m (<%= achievement.distrun ? (achievement.distrun / 1000).toFixed(2) : '0.00' %> km), Time Taken: <%= achievement.speed %></li>
+      <% }); %>
+    </ul>
+  </body>
+</html>

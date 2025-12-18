@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Results for "<%= searchTerm %>"</title>
+        <link rel="stylesheet" href="/main.css" />
+    </head>
+    <body>
+        <h1>Results for "<%= searchTerm %>"</h1>
+        <% if (!results || results.length === 0) { %>
+            <p>No matches found.</p>
+        <% } else { %>
+            <ul>
+                <% results.forEach(function(row) { %>
+                    <li>
+                        <strong><%= row.username %>:</strong> --
+                        <strong>Distance:</strong> <%= row.distrun %>m
+                        (<%= row.distrun ? (row.distrun / 1000).toFixed(2) : '0.00' %>km),
+                        <strong>Time:</strong> <%= row.speed %>
+                    </li>
+                <% }); %>
+            </ul>
+        <% } %>
+        <p><a href="/search">Back to search</a></p>
+    </body>
+</html>

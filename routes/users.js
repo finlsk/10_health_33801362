@@ -98,7 +98,7 @@ router.post('/loggedin', function (req, res, next) {
 
                     req.session.userId = username;
                     req.session.username = username;
-                    return res.redirect('/users/add_achievement');
+                    return res.redirect('./add_achievement');
                 } else {
                     return res.send("Incorrect password");
                 }

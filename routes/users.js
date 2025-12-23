@@ -3,7 +3,7 @@ const express = require("express")
 const router = express.Router()
 const redirectLogin = (req, res, next) => {
     if (!req.session.userId) {
-        res.redirect('/users/login'); // redirect to login page
+        res.redirect('./login'); // redirect to login page
     } else {
         next();
     }
